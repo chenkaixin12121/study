@@ -1,5 +1,5 @@
 server:
-  port: 9092
+  port: 9091
 
 spring:
   application:
@@ -15,7 +15,10 @@ spring:
     password: root
 
 seata:
-  tx-service-group: service_order_group
+  application-id: order-service
+  tx-service-group: order-service-seata-group
   service:
     vgroup-mapping:
-      service_order_group: default
+      order-service-seata-group: default
+    grouplist:
+      default: 127.0.0.1:8091

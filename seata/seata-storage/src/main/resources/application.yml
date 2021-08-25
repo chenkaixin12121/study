@@ -1,5 +1,5 @@
 server:
-  port: 9093
+  port: 9092
 
 spring:
   application:
@@ -15,7 +15,10 @@ spring:
     password: root
 
 seata:
-  tx-service-group: service_storage_group
+  application-id: storage-service
+  tx-service-group: storage-service-seata-group
   service:
     vgroup-mapping:
-      service_storage_group: default
+      storage-service-seata-group: default
+    grouplist:
+      default: 127.0.0.1:8091
