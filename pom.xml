@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>seata</module>
+        <module>rocketmq</module>
     </modules>
 
     <parent>
