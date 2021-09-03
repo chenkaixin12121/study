@@ -27,7 +27,7 @@ public class OrderController {
     private final RocketMQTemplate rocketMQTemplate;
 
     @PostMapping("/save")
-    public String sendTransaction() {
+    public String saveOrder() {
         Order order = Order.builder()
                 .userId("10")
                 .commodityCode("product-1")

@@ -20,7 +20,7 @@ class OrderControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    void sendTransaction() throws Exception {
+    void saveOrder() throws Exception {
         ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.post("/order/save")
         );
         resultActions.andReturn().getResponse().setCharacterEncoding(StandardCharsets.UTF_8.name());
