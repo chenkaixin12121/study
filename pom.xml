@@ -6,6 +6,7 @@
     <modules>
         <module>seata</module>
         <module>rocketmq</module>
+        <module>io</module>
     </modules>
 
     <parent>
