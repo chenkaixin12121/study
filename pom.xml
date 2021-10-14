@@ -7,6 +7,7 @@
         <module>seata</module>
         <module>rocketmq</module>
         <module>io</module>
+        <module>monitor_tuning</module>
     </modules>
 
     <parent>
