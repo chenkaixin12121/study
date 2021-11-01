@@ -1,41 +1,40 @@
-package ink.ckx.consurrency.commonUnsafe;
+package ink.ckx.consurrency.lock;
 
 import ink.ckx.consurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author chenkaixin
  * @description
- * @since 2021/10/31
+ * @since 2021/11/1
  */
 @Slf4j
 @ThreadSafe
-public class DateFormatExample3 {
+public class LockExample2 {
 
-    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("yyyyMMdd");
+    private final static Lock lock = new ReentrantLock();
     // 请求总数
     public static int clientTotal = 5000;
     // 同时并发执行的线程数
     public static int threadTotal = 200;
+    public static int count = 0;
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
         final Semaphore semaphore = new Semaphore(threadTotal);
         final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);
         for (int i = 0; i < clientTotal; i++) {
-            final int count = i;
             executorService.execute(() -> {
                 try {
                     semaphore.acquire();
-                    update(count);
+                    add();
                     semaphore.release();
                 } catch (Exception e) {
                     log.error("exception", e);
@@ -45,10 +44,15 @@ public class DateFormatExample3 {
         }
         countDownLatch.await();
         executorService.shutdown();
+        log.info("count:{}", count);
     }
 
-    private static void update(int i) {
-        log.info("{}, {}", i, DateTime.parse("20180208", dateTimeFormatter).toDate());
+    private static void add() {
+        lock.lock();
+        try {
+            count++;
+        } finally {
+            lock.unlock();
+        }
     }
 }
-
