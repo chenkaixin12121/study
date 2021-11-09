@@ -9,6 +9,7 @@
         <module>io</module>
         <module>monitor_tuning</module>
         <module>concurrency</module>
+        <module>easyexcel</module>
     </modules>
 
     <parent>
