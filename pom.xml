@@ -10,6 +10,7 @@
         <module>monitor_tuning</module>
         <module>concurrency</module>
         <module>easyexcel</module>
+        <module>sharding</module>
     </modules>
 
     <parent>
