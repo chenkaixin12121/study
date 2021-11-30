@@ -1,4 +1,4 @@
-package ink.ckx.netty.test1;
+package ink.ckx.netty.pkg.fixed;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

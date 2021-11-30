@@ -1,4 +1,4 @@
-package ink.ckx.netty.test2;
+package ink.ckx.netty.pkg.delimiter;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;

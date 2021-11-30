@@ -1,4 +1,4 @@
-package ink.ckx.netty.test1;
+package ink.ckx.netty.pkg.fixed;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.Unpooled;
@@ -38,7 +38,7 @@ public class Client {
         cf.channel().writeAndFlush(Unpooled.wrappedBuffer("aaaaabbbbb".getBytes()));
         Thread.sleep(2000);
 
-        cf.channel().writeAndFlush(Unpooled.copiedBuffer("ccccccc".getBytes()));
+        cf.channel().writeAndFlush(Unpooled.copiedBuffer("ccccccc   ".getBytes()));
 
         //等待客户端端口关闭
         cf.channel().closeFuture().sync();

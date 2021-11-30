@@ -1,4 +1,4 @@
-package ink.ckx.netty.test2;
+package ink.ckx.netty.pkg.delimiter;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
