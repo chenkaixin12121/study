@@ -11,6 +11,7 @@
         <module>concurrency</module>
         <module>easyexcel</module>
         <module>sharding</module>
+        <module>netty</module>
     </modules>
 
     <parent>
