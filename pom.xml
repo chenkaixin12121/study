@@ -12,6 +12,7 @@
         <module>easyexcel</module>
         <module>sharding</module>
         <module>netty</module>
+        <module>leetcode</module>
     </modules>
 
     <parent>
