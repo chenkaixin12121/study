@@ -19,10 +19,13 @@ public class Solution_7 {
     public int reverse(int x) {
         int n = 0;
         while (x != 0) {
+            // 避免溢出
             if (n < Integer.MIN_VALUE / 10 || n > Integer.MAX_VALUE / 10) {
                 return 0;
             }
+            // x % 10 取出元素的个位数，123 % 10 = 3
             n = n * 10 + x % 10;
+            // x / 10 去除元素的个位数，123 / 10 = 12
             x = x / 10;
         }
         return n;

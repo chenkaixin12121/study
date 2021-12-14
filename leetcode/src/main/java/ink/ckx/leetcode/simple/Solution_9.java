@@ -20,20 +20,19 @@ public class Solution_9 {
         if (x == 0) {
             return true;
         }
+        // 如果 x < 0，则说明是负数，负数不是回文数
+        // 如果 x % 10 == 0，说明 x 的个位数是0，反转后也不是回文数
         if (x < 0 || x % 10 == 0) {
             return false;
         }
         int n = 0;
+        // 反转一半的元素，对于双数 length / 2，单数 (length / 2) + 1
         while (x > n) {
             n = n * 10 + x % 10;
             x = x / 10;
         }
+        // 12121，x = 12, n = 121
+        // 1221, x = 12, n = 12
         return x == n || x == n / 10;
-    }
-
-    public boolean isPalindrome2(int x) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(x);
-        return sb.toString().equals(sb.reverse().toString());
     }
 }
