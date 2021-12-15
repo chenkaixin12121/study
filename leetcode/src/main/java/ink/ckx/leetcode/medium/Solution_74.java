@@ -28,7 +28,7 @@ public class Solution_74 {
         int right = m * n - 1;
         while (left <= right) {
             int mid = (left + right) / 2;
-            // 将矩阵当成一维数据
+            // 将矩阵当成一维数组
             int midElement = matrix[mid / n][mid % n];
             if (target == midElement) {
                 return true;
