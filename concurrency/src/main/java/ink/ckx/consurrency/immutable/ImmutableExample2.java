@@ -29,5 +29,4 @@ public class ImmutableExample2 {
         map.put(1, 3);
         log.info("{}", map.get(1));
     }
-
 }

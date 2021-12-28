@@ -17,11 +17,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class LockExample3 {
 
     private final Map<String, Data> map = new TreeMap<>();
-
     private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
-
     private final Lock readLock = lock.readLock();
-
     private final Lock writeLock = lock.writeLock();
 
     public Data get(String key) {
@@ -52,6 +49,5 @@ public class LockExample3 {
     }
 
     class Data {
-
     }
 }
